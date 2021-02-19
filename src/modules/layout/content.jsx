@@ -20,7 +20,7 @@ function getPageTitle(menuList, pathname) {
   let title = 'Ant Design Pro'
   let item = common.getTitle(menuList, 'path', pathname)
   if (item.length > 0) {
-    title = `${item[0].meta.title} - Ant Design Pro`
+    title = `${item[0].meta.title} - Ant Design`
   }
   return title
 }

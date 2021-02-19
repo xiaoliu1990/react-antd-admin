@@ -1,8 +1,10 @@
-import Index from /*webpackChunkName:'index'*/'./index'
-import IndexList from /*webpackChunkName:'index.lit'*/'./index/index.list'
-import IndexDetail from /*webpackChunkName:'index.lit'*/'./index/index.detail'
-import Home from /*webpackChunkName:'home'*/'./home/home'
-import HomeList from /*webpackChunkName:'home.list'*/'./home/home.list'
+import Loadable from 'react-loadable';
+import Loading from '@/components/loading';
+const Index = Loadable({loader: () => import(/*webpackChunkName:'test.index'*/'./index'),loading: Loading});
+const IndexList = Loadable({loader: () => import(/*webpackChunkName:'test.index.list'*/'./index/index.list'),loading: Loading});
+const IndexDetail = Loadable({loader: () => import(/*webpackChunkName:'test.index.detail'*/'./index/index.detail'),loading: Loading});
+const Home = Loadable({loader: () => import(/*webpackChunkName:'test.home'*/'./home/home'),loading: Loading});
+const HomeList = Loadable({loader: () => import(/*webpackChunkName:'test.home.list'*/'./home/home.list'),loading: Loading});
 const TestRouter = [{
   path: '/test',
   exact: true,

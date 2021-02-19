@@ -1,6 +1,8 @@
-import Form from /*webpackChunkName:'form'*/'./index'
-import FormDate from /*webpackChunkName:'form.date'*/'./form.date'
-import BraftEditor from /*webpackChunkName:'braft.editor'*/'./braft.editor'
+import Loadable from 'react-loadable';
+import Loading from '@/components/loading';
+const Form = Loadable({loader: () => import(/*webpackChunkName:'form'*/'./index'),loading: Loading});
+const FormDate = Loadable({loader: () => import(/*webpackChunkName:'form.date'*/'./form.date'),loading: Loading});
+const BraftEditor = Loadable({loader: () => import(/*webpackChunkName:'braft.editor'*/'./braft.editor'),loading: Loading});
 const FormRouter = [{
   path: '/form',
   exact: true,

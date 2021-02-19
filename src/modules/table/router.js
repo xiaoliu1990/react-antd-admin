@@ -1,4 +1,6 @@
-import TableIndex from /*webpackChunkName:'table'*/'./index'
+import Loadable from 'react-loadable';
+import Loading from '@/components/loading';
+const TableIndex = Loadable({loader: () => import(/*webpackChunkName:'table'*/'./index'),loading: Loading});
 const TableRouter = [{
   path: '/table',
   exact: true,

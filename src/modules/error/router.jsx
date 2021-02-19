@@ -1,4 +1,6 @@
-import NOTFOUND from /*webpackChunkName:'404'*/'./404'
+import Loadable from 'react-loadable';
+import Loading from '@/components/loading';
+const NOTFOUND = Loadable({loader: () => import(/*webpackChunkName:'404'*/'./404'),loading: Loading});
 const ErrorRouter = [{
   path: '/*',
   authority: ['admin','user'],

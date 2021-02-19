@@ -1,4 +1,6 @@
-import Index from /*webpackChunkName:'index'*/'./index'
+import Loadable from 'react-loadable';
+import Loading from '@/components/loading';
+const Index = Loadable({loader: () => import(/*webpackChunkName:'index'*/'./index'),loading: Loading});
 const IndexRouter = [{
   path: '/',
   exact: true,
