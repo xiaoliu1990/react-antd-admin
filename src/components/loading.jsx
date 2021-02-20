@@ -12,8 +12,8 @@ const Loading = () => {
   }, []);
 
   return (
-    <div className="container">
-      <Spin />
+    <div className="loading">
+      <Spin size="large" />
     </div>
   );
 };

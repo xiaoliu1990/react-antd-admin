@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux'
 import common from '@/comm/common';
 import echarts from "./echarts";
-let chart={};
+let chart = {};
 function SetOptions({ expectedData, actualData } = {}) {
   chart.setOption({
     backgroundColor: "#fff",
@@ -81,11 +82,15 @@ function Resize() {
   }
 }
 function ComLineChart(props) {
+  let { collapsed } = useSelector(state => ({
+    collapsed: state.layoutReducer.collapsed
+  }));
   useEffect(() => {
     chart = echarts.init(document.getElementById('lineChart'));
     SetOptions(props.lineChart);
+    setTimeout(() => Resize(), 210);
     window.addEventListener("resize", () => Resize());
-  },[props.lineChart]);
+  }, [props.lineChart, collapsed]);
   return (
     <div
       id="lineChart"
