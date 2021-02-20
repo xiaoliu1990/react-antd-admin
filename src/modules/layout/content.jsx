@@ -37,6 +37,7 @@ function LayoutContent(props) {
       <Content>
         <div className="container">
           <Switch>
+          <Redirect exact from="/" to="/index" />
             {renderRoutes(routes)}
             <Redirect to="/error/404" />
           </Switch>
