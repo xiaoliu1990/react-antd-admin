@@ -41,22 +41,22 @@ const residences = [
 const formItemLayout = {
   labelCol: {
     xs: { span: 8 },
-    sm: { span: 2 },
+    sm: { span: 6 },
   },
   wrapperCol: {
     xs: { span: 28 },
-    sm: { span: 20 },
+    sm: { span: 12 },
   },
 };
 const tailFormItemLayout = {
   wrapperCol: {
     xs: {
-      span: 6,
+      span: 10,
       offset: 0,
     },
     sm: {
-      span: 4,
-      offset: 2,
+      span: 8,
+      offset: 6,
     },
   },
 };

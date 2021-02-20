@@ -4,7 +4,7 @@ import Header from './header'
 import Sider from './sider'
 function Main () {
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout>
       <Sider />
       <Layout>
         <Header />

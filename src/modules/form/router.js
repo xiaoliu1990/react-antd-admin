@@ -4,7 +4,7 @@ const Form = Loadable({loader: () => import(/*webpackChunkName:'form'*/'./index'
 const FormDate = Loadable({loader: () => import(/*webpackChunkName:'form.date'*/'./form.date'),loading: Loading});
 const BraftEditor = Loadable({loader: () => import(/*webpackChunkName:'braft.editor'*/'./braft.editor'),loading: Loading});
 const FormRouter = [{
-  path: '/form',
+  path: '/form/basic',
   exact: true,
   authority: ['admin','user'],
   meta:{

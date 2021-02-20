@@ -1,10 +1,26 @@
+::-webkit-scrollbar{width:5px;height:5px;}
+::-webkit-scrollbar-track{border-radius:999px;border:5px solid transparent;}
+::-webkit-scrollbar-thumb{background-clip:content-box;box-shadow:0 0 0 7px rgba(0,0,0,0.5) inset;border-radius:999px;}
+::-webkit-scrollbar-corner{background:0 0;}
+.img-responsive{display:block;max-width:100%;height:auto;}
+.space-bottom{margin-bottom:10px !important;}
+.loading{text-align:center;padding-top:20px;}
 .trigger{cursor:pointer;font-size:20px;}
 .trigger:hover{color:#1FC926;}
-.container{ padding: 10px; position: relative; }
-.logo{height:40px;margin:10px;background:#94e6e6;}
-.card-panel{background-color: #ffffff; padding: 10px; cursor: pointer;}
-.space-bottom{margin-bottom: 10px;}
-.chart-box{width: 100%; height: 350px; background-color: #ffffff;}
-.braft-editor{background-color: #ffffff;}
-.card-no-border{border: none !important;}
-.loading{text-align: center;padding-top: 20px;}
+.logo{padding:14px 10px;text-align:center;}
+.logo-img{width:32px;height:32px;}
+.logo h1{display:inline-block;height:32px;margin:0 0 0 12px;color:#1FC926;font-weight:600;font-size:18px;line-height:32px;vertical-align:middle;animation:pro-layout-title-hide .2s;}
+@keyframes pro-layout-title-hide{0%{display:none;opacity:0}
+80%{display:none;opacity:0}
+to{display:unset;opacity:1}
+}
+.card-panel{background-color:#ffffff;padding:10px;cursor:pointer;}
+.card-no-border{border:none !important;padding:20px !important;}
+.chart-box{width:100%;height:350px;background-color:#ffffff;}
+.braft-editor{background-color:#ffffff;}
+.container{padding:20px;position:relative;}
+.sider-fixed{overflow:auto;height:100vh;position:fixed;left:0;z-index:2;box-shadow:2px 0 8px 0 rgb(29 35 41 / 5%);}
+.sider-size{width:200px;overflow:hidden;flex:0 0 200px;max-width:200px;min-width:200px;transition:background-color 0.2s ease 0s,min-width 0.2s ease 0s,max-width 0.2s cubic-bezier(0.645,0.045,0.355,1) 0s;}
+.sider-size-collapsed{width:80px;overflow:hidden;flex:0 0 80px;max-width:80px;min-width:80px;transition:background-color 0.2s ease 0s,min-width 0.2s ease 0s,max-width 0.2s cubic-bezier(0.645,0.045,0.355,1) 0s;}
+.header-fixed{position:fixed;z-index:1;width:100%;}
+.content-fixed{margin-top:64px;}

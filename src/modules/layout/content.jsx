@@ -34,7 +34,7 @@ function LayoutContent(props) {
   //routerFilter(routes)
   return (
     <DocumentTitle title={getPageTitle(routes, pathname)}>
-      <Content>
+      <Content className="content-fixed">
         <div className="container">
           <Switch>
           <Redirect exact from="/" to="/index" />

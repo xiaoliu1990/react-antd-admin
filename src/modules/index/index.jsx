@@ -23,21 +23,20 @@ const lineChartDefaultData = {
 
 function Index() {
   const [lineChartData, setLineChartData] = useState(lineChartDefaultData['News'])
-  const onLineChart = (type) => setLineChartData(lineChartDefaultData[type])
   return (
     <>
       <div className="space-bottom">
         <Row gutter={10}>
-          <Col lg={6} sm={12} xs={12} onClick={() => onLineChart('News')} className="card-panel-col">
+          <Col lg={6} sm={12} xs={12} onClick={() => setLineChartData(lineChartDefaultData['News'])} className="card-panel-col">
             <div className="card-panel">News</div>
           </Col>
-          <Col lg={6} sm={12} xs={12} onClick={() => onLineChart('Messages')} className="card-panel-col">
+          <Col lg={6} sm={12} xs={12} onClick={() => setLineChartData(lineChartDefaultData['Messages'])} className="card-panel-col">
             <div className="card-panel">Messages</div>
           </Col>
-          <Col lg={6} sm={12} xs={12} onClick={() => onLineChart('Purchases')} className="card-panel-col">
+          <Col lg={6} sm={12} xs={12} onClick={() => setLineChartData(lineChartDefaultData['Purchases'])} className="card-panel-col">
             <div className="card-panel">Purchases</div>
           </Col>
-          <Col lg={6} sm={12} xs={12} onClick={() => onLineChart('Shoppings')} className="card-panel-col">
+          <Col lg={6} sm={12} xs={12} onClick={() => setLineChartData(lineChartDefaultData['Shoppings'])} className="card-panel-col">
             <div className="card-panel">Shoppings</div>
           </Col>
         </Row>

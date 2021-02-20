@@ -14,7 +14,7 @@ function Index() {
   }
   const [data, setData] = useState({})
   const [count, setCount] = useState(0)
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchData = () => {
       message.loading('加载中...', 0);
       apiPanel({ 'groupId': '1', 'entId': '1807131104131000' }).then((res) => {
@@ -26,12 +26,12 @@ function Index() {
       });
     };
     fetchData()
-  }, [count]);
+  }, [count]);*/
 
   function onChange(date, dateString) {
     console.log(date, dateString);
   }
-  console.log(data)
+  //console.log(data)
   return (
     <>
       <Space direction="vertical">
@@ -55,6 +55,7 @@ function Index() {
         index页面热更新了啊：<br />count：{count}
       </p>
       <ComIndex count={count} />
+      <div style={{height:'10000px'}}></div>
     </>
   );
 }

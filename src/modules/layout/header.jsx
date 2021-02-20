@@ -9,7 +9,7 @@ function LayoutHeader() {
   }))
   const dispatch = useDispatch()
   return (
-    <Header>
+    <Header className="header-fixed">
       <span className="trigger" onClick={() => dispatch(toggleSiderBar(collapsed))}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </span>

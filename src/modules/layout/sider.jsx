@@ -4,6 +4,7 @@ import { Link, withRouter } from "react-router-dom"
 import { Layout, Menu } from 'antd'
 import menuList from "@/comm/menuConfig";
 import { HomeOutlined } from '@ant-design/icons'
+import logo from '@/style/img/logo.svg'
 const { Sider } = Layout
 const { SubMenu } = Menu
 function LayoutSider(props) {
@@ -58,21 +59,33 @@ function LayoutSider(props) {
     setMenuTreeNode(getMenuNodes(menuList))
   }, []);
   return (
-    <Sider trigger={null} collapsible collapsed={collapsed}>
-      <div className="logo" />
-      {menuTreeNode.map((item, index) => (
-        <Menu
-          key={index}
-          mode="inline"
-          onClick={(e) => setLightKey(e.key)}
-          theme="light"
-          selectedKeys={[lightKey]}
-          defaultOpenKeys={openKey}
-        >
-          {item}
-        </Menu>
-      ))}
-    </Sider>
+    <>
+      <div className={collapsed ? "sider-size-collapsed" : "sider-size"}></div>
+      <Sider
+        className="sider-fixed"
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+        theme="light"
+      >
+        <div className="logo" >
+          <img src={logo} className="logo-img" />
+          {!collapsed && <h1>Ant Design</h1>}
+        </div>
+        {menuTreeNode.map((item, index) => (
+          <Menu
+            key={index}
+            onClick={(e) => setLightKey(e.key)}
+            selectedKeys={[lightKey]}
+            defaultOpenKeys={openKey}
+            theme="light"
+            mode="inline"
+          >
+            {item}
+          </Menu>
+        ))}
+      </Sider>
+    </>
   )
 }
 export default withRouter(LayoutSider)
