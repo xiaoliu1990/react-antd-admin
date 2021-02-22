@@ -1,5 +1,5 @@
 import { Redirect, withRouter, Switch } from 'react-router-dom'
-import DocumentTitle from 'react-document-title'
+import { Helmet } from 'react-helmet'
 import { Layout } from 'antd'
 import common from '@/comm/common'
 import { renderRoutes } from 'react-router-config'
@@ -33,17 +33,18 @@ function LayoutContent(props) {
   }
   //routerFilter(routes)
   return (
-    <DocumentTitle title={getPageTitle(routes, pathname)}>
-      <Content className="content-fixed">
-        <div className="container">
-          <Switch>
+    <Content className="content-fixed">
+      <Helmet>
+        <title>{getPageTitle(routes, pathname)}</title>
+      </Helmet>
+      <div className="container">
+        <Switch>
           <Redirect exact from="/" to="/index" />
-            {renderRoutes(routes)}
-            <Redirect to="/error/404" />
-          </Switch>
-        </div>
-      </Content>
-    </DocumentTitle>
+          {renderRoutes(routes)}
+          <Redirect to="/error/404" />
+        </Switch>
+      </div>
+    </Content>
   )
 }
 export default withRouter(LayoutContent)

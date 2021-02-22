@@ -16,7 +16,7 @@ function Editor() {
     console.log(htmlContent)
   }
   function myUploadFn(param) {
-    const serverURL = '//www.upload.com/file/uploadFile/'
+    const serverURL = '//devuploader.love-health.com.cn/file/uploadFile/'
     const xhr = new XMLHttpRequest
     const fd = new FormData()
     const successFn = (res) => {
@@ -46,7 +46,9 @@ function Editor() {
     xhr.send(fd)
   }
   function myValidateFn(file) {
-    message.warning('不能上传超过100kb的图片');
+    if(file.size>1024 * 100){
+      message.warning('不能上传超过100kb的图片');
+    }
     return file.size < 1024 * 100
   }
   return (
