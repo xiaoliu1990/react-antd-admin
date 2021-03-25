@@ -40,7 +40,8 @@ function FormCrop() {
   };
   function onChange({ fileList: newFileList }) {
     form.setFieldsValue({ fileList: newFileList })
-    form.validateFields()
+
+    newFileList.length === 0 && form.validateFields()
     setFileList(newFileList);
   };
   function onPreview(file) {

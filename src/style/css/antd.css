@@ -1,1 +1,6 @@
-.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left{border-right-color: #fff;}
+#root,body,html{height:100%;}
+.ant-menu-inline,.ant-menu-vertical,.ant-menu-vertical-left{border-right-color:#fff;}
+.ant-layout-footer{color:rgba(0,0,0,.85);font-size:14px;background:#f0f2f5;color:#999999;}
+.ant-pro-global-footer{margin:20px 0 5px;padding:0 16px;text-align:center;}
+.anticon{margin:0px 10px;display:inline-block;color:inherit;font-style:normal;line-height:0;text-align:center;text-transform:none;vertical-align:-.125em;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.ant-pro-basicLayout{display:flex;flex-direction:column;width:100%;min-height:100%;}

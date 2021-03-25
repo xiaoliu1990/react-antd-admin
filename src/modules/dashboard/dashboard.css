@@ -1,0 +1,89 @@
+/*分析页*/
+.chart-card{position:relative;}
+.chart-card-top{position:relative;width:100%;overflow:hidden;}
+.chart-card-topMargin{margin-bottom:12px;}
+.chart-card-metaWrap{float:left;}
+.chart-card-meta{height:22px;color:#333;font-size:14px;line-height:22px;}
+.chart-card-title{}
+.chart-card-action{position:absolute;top:4px;right:0;line-height:1;cursor:pointer;}
+.chart-card-content{position:relative;width:100%;margin-bottom:12px;}
+.chart-card-contentFixed{position:absolute;bottom:0;left:0;width:100%;}
+.chart-card-footer{margin-top:8px;padding-top:9px;border-top:1px solid #eee;}
+.chart-card-footerMargin{margin-top:20px;}
+.chart-card-total{height:38px;margin-top:4px;margin-bottom:0;overflow:hidden;color:#333;font-size:30px;line-height:38px;white-space:nowrap;text-overflow:ellipsis;word-break:break-all;}
+
+.field{margin:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.field-label,.field-number{font-size:14px;line-height:22px;}
+.field-number{margin-left:8px;color:#666;}
+
+.sales-bar{padding:0 0 32px 32px;}
+.sales-rank{padding:0 32px 32px 72px;}
+.sales-extraWrap{}
+.sales-extra{display:inline-block;margin-right:24px;}
+.sales-extra a{margin-left:24px;color:#333;}
+.sales-extra a:hover{color:#1FC926;}
+.sales-extra a.current-date{color:#1FC926;}
+.sales-rankingList{margin:25px 0 0;padding:0;list-style:none;}
+.sales-rankingList li{display:flex;align-items:center;margin-top:16px;zoom:1;}
+.sales-rankingList li:before,.sales-rankingList li:after{display:table;content:' ';}
+.sales-rankingList li:after{clear:both;height:0;font-size:0;visibility:hidden;}
+.sales-rankingList li span{color:#333;font-size:14px;line-height:22px;}
+.sales-rankingList li .sales-rankingItemNumber{display:inline-block;width:20px;height:20px;margin-top:1.5px;margin-right:16px;font-weight:600;font-size:12px;line-height:20px;text-align:center;border-radius:20px;}
+.sales-rankingList li .sales-rankingItemNumber.active{color:#fff;background-color:#314659;}
+.sales-rankingList li .sales-rankingItemTitle{flex:1;margin-right:8px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+
+.numberInfo{}
+.numberInfoTitle{height:22px;overflow:hidden;color:#666;font-size:12px;line-height:22px;white-space:nowrap;text-overflow:ellipsis;word-break:break-all;}
+.numberInfoValue{margin-top:4px;overflow:hidden;font-size:0;white-space:nowrap;text-overflow:ellipsis;word-break:break-all;}
+.numberInfoValue > span{display:inline-block;height:32px;margin-right:32px;color:#333;font-size:24px;line-height:32px;}
+.numberInfoValue > .subTotal{margin-right:0;color:#666;font-size:16px;vertical-align:top;}
+.subTotal .anticon{margin-left:4px;font-size:12px;transform:scale(0.82);}
+.anticon-caret-up{color:#ff5100;}
+.anticon-caret-down{color:#1FC926;}
+.chart-mini{height: 45px;}
+
+.trendItem{display:inline-block;font-size:14px;line-height:22px;}
+.up,.down{position:relative;top:1px;margin-left:4px;}
+.up span,.down span{font-size:12px;transform:scale(0.83);}
+.up{color:#ff5100;}
+.down{top:-1px;color:#1FC926;}
+.trendItem .trendItemGrey .up,.trendItem .trendItemGrey .down{color:#333;}
+.trendItem .reverseColor .up{color:#1FC926;}
+.trendItem .reverseColor .down{color:#ff5100;}
+
+.channel-salesCard .ant-card-head{position:relative;}
+.salesCardExtra{height:inherit;}
+.salesTypeRadio{position:absolute;right:14px;bottom:12px;}
+/*分析页*/
+.pageHeader{background-color: #ffffff; padding: 20px; margin: -20px -20px 20px -20px;}
+.pageHeader-title{margin-bottom:12px;margin-right:12px;color:rgba(0,0,0,.85);font-weight:600;font-size:20px;line-height:32px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pageHeader-content{display:flex;}
+.avatar{flex:0 1 72px;}
+.avatar > span{display:block;width:72px;height:72px;border-radius:72px;}
+.content{position:relative;top:4px;flex:1 1 auto;margin-left:24px;color:#999999;line-height:22px;}
+.content .content-title{margin-bottom:12px;color:#333333;font-weight:500;font-size:20px;line-height:28px;}
+
+.extra-content{float:right;white-space:nowrap; margin-top: 44px;}
+.stat-item{position:relative;display:inline-block;padding:0 32px;}
+.stat-item > p:first-child{margin-bottom:4px;color:#999999;font-size:14px;line-height:22px;}
+.stat-item > p{margin:0;color:#333333;font-size:30px;line-height:38px;}
+.stat-item > p > span{color:#999999;font-size:20px;}
+.stat-item:after{position:absolute;top:8px;right:0;width:1px;height:40px;background-color:#cccccc; content:'';}
+.stat-item:last-child{padding-right:0;}
+.stat-item:last-child:after{display:none;}
+
+.project-list .ant-card-meta-description{height:44px;overflow:hidden;color:#999999;line-height:22px;}
+.card-title{font-size:0;}
+.card-title span{display:inline-block;height:24px;margin-right:12px;color:#333333;font-size:14px;line-height:24px;vertical-align:top;}
+.project-grid{width:33.33%;padding: 24px !important;}
+.project-item-content{display:flex;height:20px;margin-top:8px;overflow:hidden;font-size:12px;line-height:20px;}
+.project-item-content span{display:inline-block;flex:1 1 0;color:#666666;}
+.project-item-content .datetime{flex:0 0 auto;float:right;color:#999999;text-align:right;}
+.activitiesList{padding:0 24px 8px 24px;}
+.link-group{padding: 20px 0 8px 24px;}
+.link-group>a{display:inline-block;width:25%;margin-bottom:13px;color:rgba(0,0,0,.85);font-size:14px;}
+.members a{display:block;height:24px;margin:12px 0;color:#333333;transition:all 0.3s;white-space: nowrap; word-break: break-all;text-overflow: ellipsis;overflow: hidden;}
+.members a .member{margin-left:12px;font-size:14px;line-height:24px;vertical-align:top;}
+.members a:hover{color:#1FC926;}
+
+

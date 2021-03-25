@@ -75,7 +75,7 @@ function FormUpload() {
           >
             {fileList.length < 3 && <div><PlusOutlined /><div style={{ marginTop: 8 }}>上传图片</div></div>}
           </Upload>
-        </Form.Item>
+        </Form.Item> 
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit">提交</Button>
         </Form.Item>

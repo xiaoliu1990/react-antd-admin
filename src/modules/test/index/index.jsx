@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import { Space, DatePicker, Button, message } from 'antd'
 import { apiPanel } from '@/api/index.api'
 import ComIndex from '@/components/test/index'
@@ -14,7 +15,11 @@ function Index() {
   }
   const [data, setData] = useState({})
   const [count, setCount] = useState(0)
-  /*useEffect(() => {
+  let { collapsed } = useSelector(state => ({
+    collapsed: state.layoutReducer.collapsed
+  }));
+  console.log(collapsed)
+  useEffect(() => {
     const fetchData = () => {
       message.loading('加载中...', 0);
       apiPanel({ 'groupId': '1', 'entId': '1807131104131000' }).then((res) => {
@@ -26,7 +31,7 @@ function Index() {
       });
     };
     fetchData()
-  }, [count]);*/
+  }, [count]);
 
   function onChange(date, dateString) {
     console.log(date, dateString);

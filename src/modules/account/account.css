@@ -1,0 +1,17 @@
+.account-main{display:flex;width:100%;height:100%;padding-top:16px;padding-bottom:16px;overflow:auto;background-color:#ffffff;}
+.left-menu{width:224px;border-right:1px solid #eeeeee;}
+.right{flex:1;padding-top:8px;padding-right:40px;padding-bottom:8px;padding-left:40px;}
+.right .title{margin-bottom:12px;color:#333333;font-weight:500;font-size:20px;line-height:28px;}
+.taobao{display:block;color:#ff4000;font-size:48px;line-height:48px;border-radius:2px;}
+.dingding{margin:2px;padding:6px;color:#fff;font-size:32px;line-height:32px;background-color:#2eabff;border-radius:2px;}
+.alipay{color:#2eabff;font-size:48px;line-height:48px;border-radius:2px;}
+.area_code{width:30%;max-width:128px;margin-right:8px !important;}
+.phone_number{max-width:170px;}
+
+.base-view{display:flex;padding-top:12px;}
+.base-view .left{min-width:224px;max-width:448px;}
+.base-view .right{flex:1;padding-left:104px;}
+.base-view .right .avatar-title{height:22px;margin-bottom:8px;color:#333333;font-size:14px;line-height:22px;}
+.base-view .right .avatar{width:144px;height:144px;margin-bottom:12px;overflow:hidden;}
+.base-view .right .avatar img{width:100%;}
+.base-view .right .button-view{width:144px;text-align:center;}

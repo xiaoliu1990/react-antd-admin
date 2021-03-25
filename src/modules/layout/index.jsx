@@ -1,14 +1,16 @@
 import { Layout } from 'antd'
-import Content from './content'
-import Header from './header'
 import Sider from './sider'
-function Main () {
+import Header from './header'
+import Content from './content'
+import Footer from './footer'
+function Main() {
   return (
-    <Layout>
+    <Layout className="ant-pro-basicLayout">
       <Sider />
       <Layout>
         <Header />
         <Content />
+        <Footer />
       </Layout>
     </Layout>
   )

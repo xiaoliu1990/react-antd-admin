@@ -9,8 +9,18 @@ const menuList = [
     path: "/index",
   },
   {
-    title: "表格",
-    path: "/table",
+    title: "统计系统",
+    path: "/dashboard",
+    children: [
+      {
+        title: "分析页",
+        path: "/dashboard/analysis",
+      },
+      {
+        title: "工作台",
+        path: "/dashboard/workplace",
+      },
+    ]
   },
   {
     title: "表单",
@@ -37,6 +47,40 @@ const menuList = [
         path: "/form/crop",
       },
     ],
+  },
+  {
+    title: "异常页",
+    path: "/exception",
+    children: [
+      {
+        title: "403",
+        path: "/exception/403",
+      },
+      {
+        title: "404",
+        path: "/exception/404",
+      },
+      {
+        title: "500",
+        path: "/exception/500",
+      },
+    ],
+  },
+  {
+    title: "详情页",
+    path: "/profile/basic",
+  },
+  {
+    title: "个人设置",
+    path: "/account/settings",
+  },
+  {
+    title: "表格",
+    path: "/table",
+  },
+  {
+    title: "树形控件",
+    path: "/tree",
   },
   {
     title: "测试",

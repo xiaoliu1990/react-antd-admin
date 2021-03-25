@@ -2,12 +2,11 @@ const path = require('path')
 const webpack = require('webpack')
 const WebpackBar = require('webpackbar')//进度条
 const CracoAntDesignPlugin = require('craco-antd')//单独抽离antd，自定义样式
-const TerserWebpackPlugin = require('terser-webpack-plugin')//取消console日志打印
+const TerserWebpackPlugin = require('terser-webpack-plugin')//压缩js，取消console日志打印
 const HtmlWebpackPlugin = require('html-webpack-plugin')//
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')//转化antd的日期插件moment为dayjs
 const FileManagerPlugin = require('filemanager-webpack-plugin')//增加 文件管理
 const WebpackCDNInject = require('webpack-cdn-inject')// 增加CDN文件插入
-const UglifyJsPlugin=require('uglifyjs-webpack-plugin')//压缩js文件
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin //打包文件分析：开发环境不需要启动注释掉
 const CopyWebpackPlugin = require('copy-webpack-plugin')// copy文件到打包目录
 //多线程
@@ -53,7 +52,6 @@ module.exports = {
       }),
       new webpack.DefinePlugin({//配置引用变量
         'process.env': {
-          //'NODE_ENV': 'production',
           'PRD_KEY': JSON.stringify(pageconfig.prdKey),//区分产品线
           'API_URL': JSON.stringify(pageconfig.api_statistics),//api 有多个API 单独配置多个
           'CDN_URL': JSON.stringify(pageconfig.cdn_common), //cdn
@@ -63,21 +61,24 @@ module.exports = {
           'PAYHOST_URL': JSON.stringify(pageconfig.payHostUrl) //支付
         }
       }),
-      //...(process.env.NODE_ENV === 'development' ? [] : [new BundleAnalyzerPlugin()]),//打包文件分析：开发环境不需要启动注释掉
-      new TerserWebpackPlugin({
-        sourceMap: false, // 如果在生产中使用源映射，则必须设置为true
-        terserOptions: {
-          ecma: undefined,
-          warnings: false,
-          parse: {},
-          compress: {
-            drop_console: NPM_LIFECYCLE_EVENT.indexOf('build') === 0 ? true : false,
-            drop_debugger: false, // 移除断点
-            pure_funcs:
-              NPM_LIFECYCLE_EVENT.indexOf('build') === 0 ? ['console.log'] : '', // 生产环境下移除console
+      ...(process.env.NODE_ENV === 'development' ? [] : [new BundleAnalyzerPlugin()]),//打包文件分析：不需要启动注释掉
+      ...(process.env.NODE_ENV === 'development' ? [] : [
+        new TerserWebpackPlugin({
+          sourceMap: false, // 如果在生产中使用源映射，则必须设置为true。
+          terserOptions: {
+            ecma: undefined,
+            warnings: false,
+            parse: {},
+            compress: {
+              drop_console: NPM_LIFECYCLE_EVENT.indexOf('build') === 0 ? true : false,
+              drop_debugger: false, // 移除断点
+              pure_funcs:
+                NPM_LIFECYCLE_EVENT.indexOf('build') === 0 ? ['console.log'] : '', // 生产环境下移除console
+            },
           },
-        },
-      }),
+        })
+      ]),
+
       //增加打包备份 按时间和版本
       new FileManagerPlugin({
         events: {
@@ -96,22 +97,6 @@ module.exports = {
       //   ]
       // }),
     ],
-    optimization: {
-      minimizer: [
-        new UglifyJsPlugin({
-          uglifyOptions: {
-            output: {
-              comments: false
-            },
-            compress: {
-              warnings: false,
-              drop_debugger: true,
-              drop_console: true
-            }
-          }
-        })
-      ]
-    },
     configure: (webpackConfig, { env, paths }) => {//重写 webpack 任意配置
       paths.appBuild = 'dist'
       webpackConfig.output = {

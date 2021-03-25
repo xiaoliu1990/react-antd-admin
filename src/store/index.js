@@ -19,3 +19,5 @@ export default function configureStore() {
   )
   return store
 }
+// const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunkMiddleware)));
+// export default store

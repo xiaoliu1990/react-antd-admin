@@ -16,7 +16,7 @@ function Editor() {
     console.log(htmlContent)
   }
   function myUploadFn(param) {
-    const serverURL = '//devuploader.love-health.com.cn/file/uploadFile/'
+    const serverURL = 'upload.xx.com'
     const xhr = new XMLHttpRequest
     const fd = new FormData()
     const successFn = (res) => {
